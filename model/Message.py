@@ -28,5 +28,5 @@ class Message:
         return tuple([self.writer, self.body, self.date_time])
     
     def replace_commas(self):
-        self.writer.replace(",", ";")
-        self.body.replace(",", ";")
+        self.writer = self.writer.replace(",", ";")
+        self.body = self.body.replace(",", ";")
