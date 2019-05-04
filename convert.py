@@ -1,8 +1,6 @@
 import sys
-import pandas as pd
 
 from model.WhatsappConverter import WhatsappConverter
-from model.Message import Message
 
 
 def main():

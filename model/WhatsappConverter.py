@@ -1,4 +1,5 @@
 import pandas as pd
+
 from model.Message import Message
 
 
@@ -12,7 +13,8 @@ def extract_messages_lines(fp) -> [str]:
     message = ""
     while line:
         if not is_new_message_line(line):
-            message += ". " + line
+            if not line == "\n":
+                message += ". " + line
         else:
             if message:
                 messages.append(message)
@@ -37,6 +39,7 @@ class WhatsappConverter:
     def start_conversion(self):
         with open(self.filepath) as reader:
             messages = parse_messages(reader)
+            messages = list(filter(lambda message: message.body, messages))
             messages = list(map(lambda message: message.to_tuple(), messages))
             df = pd.DataFrame.from_records(data=messages, columns=["Writer", "Body", "Datetime"])
             self.data = df
