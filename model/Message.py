@@ -1,4 +1,5 @@
 from datetime import datetime
+import pandas as pd
 
 
 class Message:
@@ -22,3 +23,6 @@ class Message:
     
     def __str__(self) -> str:
         return f"{self.writer}: {self.body} at {self.date_time}"
+    
+    def to_series(self) -> pd.Series:
+        return pd.Series([self.writer, self.body, self.date_time], index=["Writer", "Body", "Datetime"])
