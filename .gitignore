@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+*.iml
+*.xml
+replace_certain_strings.py
+chat.txt
+messages.csv
