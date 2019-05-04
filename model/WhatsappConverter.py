@@ -2,7 +2,7 @@ import pandas as pd
 from model.Message import Message
 
 
-def is_line_new_message(line: str) -> bool:
+def is_new_message_line(line: str) -> bool:
     return line.startswith("[")
 
 
@@ -11,13 +11,15 @@ def extract_messages_lines(fp) -> [str]:
     line = fp.readline()
     message = ""
     while line:
-        if not is_line_new_message(line):
+        if not is_new_message_line(line):
             message += ". " + line
         else:
-            messages.append(message)
+            if message:
+                messages.append(message)
             message = line
         message = message.strip()
         line = fp.readline()
+    messages.append(message)
     return messages
 
 

@@ -1,0 +1,7 @@
+[20.10.17, 12:23:53] Adam: Test1, Test2
+[20.10.17, 13:39:12] Eva: Test1 back Test3
+[20.10.17, 13:45:55] Adam: Hello testing
+[20.10.17, 14:11:20] Eva: Hello Adam
+[20.10.17, 14:44:16] Adam: Hello Eva
+[21.10.17, 14:43:14] Adam: How is it going?
+[21.10.17, 14:55:21] Eva: Good good
